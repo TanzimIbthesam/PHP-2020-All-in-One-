@@ -1,0 +1,45 @@
+1.CREATE TABLE 
+CREATE TABLE Students(
+    id INT,
+    name VARCHAR(30),
+    birth_date DATE ,
+    phone INT,
+    GENDER VARCHAR(1)
+    
+);
+CREATE TABLE products(
+    id int NOT NULL UNIQUE AUTO_INCREMENT,
+    product_name VARCHAR(30),
+    product_details TEXT,
+    product_price INT,
+    PRIMARY KEY (id)
+    
+    
+);
+
+2.INSERT INTO TABLE
+INSERT INTO `products`(`id`, `product_name`, `product_details`, `product_price`) VALUES (1,'Galaxy','Very good product',500);
+2. INSERT MULTIPLE ROWS
+INSERT INTO 
+products
+(`id`, `product_name`, `product_details`, `product_price`) 
+VALUES
+ (2,'Galaxy','Very good product',500),
+ (3,'Galaxy2','Very good product',500);
+ 
+ 3. Type of CONSTRAINTS
+ 1.NOT NULL 
+ 2.UNIQUE 
+ 3.DEFAULT 
+ 4.CHECK 
+ 5.PRIMARY KEY 
+ 6.FOREIGN KEY 
+CREATE TABLE employeerecords( 
+    id int  UNIQUE AUTO_INCREMENT, 
+    employee_name VARCHAR(30) NOT NULL, 
+    employee_designation VARCHAR(30) NOT NULL DEFAULT 'Officer', 
+    employee_phonenum INT UNIQUE,
+    employee_age INT NOT NULL CHECK(employee_age>18)
+    
+
+);
