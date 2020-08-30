@@ -43,3 +43,29 @@ CREATE TABLE employeerecords(
     
 
 );
+4. SELECT 
+To select all 
+SELECT * FROM `employeerecords` 
+Select a specific name or a age 
+SELECT * FROM `employeerecords` WHERE name='Tanzim';
+SELECT * FROM `employeerecords` WHERE employee_age>19;
+
+5. SELECt AND,OR,NOT
+SELECT * FROM `employeerecords` WHERE age>19 AND employee_designation='Senior Officer';
+SELECT * FROM `employeerecords` WHERE employee_age>18 AND employee_designation='Senior Officer';
+SELECT * FROM `employeerecords` WHERE employee_age>19 OR employee_designation='Senior Officer';
+SELECT * FROM `employeerecords` WHERE (employee_age>20 or employee_age>25) AND employee_designation='Senior Officer';
+SELECT * FROM `employeerecords` WHERE employee_age>=20;
+
+NOT 
+SELECT * FROM `employeerecords` WHERE employee_age !=20
+SELECT * FROM `employeerecords` WHERE NOT employee_age>=20
+SELECT * FROM `employeerecords` WHERE NOT employee_age>20 
+
+6.IN 
+SELECT * FROM `employeerecords` WHERE employee_designation IN ('Senior Officer','Executive Officer');
+
+7.BETWEEN
+SELECT * FROM `employeerecords` WHERE employee_age BETWEEN 18 AND 20;
+
+
