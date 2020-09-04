@@ -1,0 +1,52 @@
+JOIN 
+
+1.INNER JOIN 
+
+SELECT  FROM students
+INNER JOIN city 
+ON students.city_id=city.id;
+
+SELECT * FROM students
+INNER JOIN city 
+ON students.city_id=city.id
+GROUP BY city.name;
+
+SELECT  FROM students
+INNER JOIN city 
+ON students.city_id=city.id
+ORDER BY city.name;
+If we dont want to show foreign key id column 
+
+SELECT  students.id,students.name,students.age,students.marks,city.name FROM students
+INNER JOIN city 
+ON students.city_id=city.id;
+
+
+ LEFT JOIN
+SELECT * FROM students 
+LEFT JOIN city 
+ON students.city_id=city.id;
+RIGHT JOIN
+SELECT * FROM students 
+RIGHT JOIN city 
+ON students.city_id=city.id;
+
+CROSS JOIN 
+SELECT * FROM students 
+CROSS JOIN city;
+//If we dont want to show foreign key id column 
+SELECT students.id,students.name,students.age,students.marks,city.name FROM students 
+CROSS JOIN city;
+MULTIPLE TABLE JOIN 
+ALTER TABLE students
+ADD FOREIGN KEY (courses_id)  REFERENCES courses(id);
+
+SELECT students.id,students.name,students.age,students.marks,city.name,courses.name
+ FROM students 
+ INNER JOIN 
+ city 
+ ON students.city_id=city.id 
+ INNER JOIN courses 
+ ON students.courses_id=courses.id
+
+
