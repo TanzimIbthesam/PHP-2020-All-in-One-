@@ -1,0 +1,50 @@
+11.ORDER BY DISTINCT 
+//Finding all names in Ascending order
+SELECT * FROM `employeerecords` ORDER BY employee_name;
+//Finding all names in Descending order
+SELECT * FROM `employeerecords` ORDER BY employee_name DESC;
+//show all in order they were recorded first 
+SELECT * FROM `employeerecords` ORDER BY id DESC;
+//show common cities 
+SELECT DISTINCT city FROM `employeerecords` ;
+12.NULL NOT NULL
+//anyone who has not given his phone number 
+SELECT * FROM `employeerecords` WHERE employee_phonenum IS NULL;
+SELECT * FROM `employeerecords` WHERE employee_phonenum IS NOT NULL;
+13. LIMIT,OFFSET 
+//Limit the queries and position
+SELECT * FROM `employeerecords` WHERE employee_phonenum LIMIT 1,3;
+SELECT * FROM `employeerecords`  LIMIT 3,3;
+SELECT * FROM `employeerecords`  LIMIT 1,3;
+14.COUNT,MIN,MAX,SUM,AVG
+SELECT  COUNT(expenses) FROM `employeerecords`;
+SELECT  MIN(expenses) FROM `employeerecords`;
+SELECT  MAX(expenses) FROM `employeerecords`;
+SELECT SUM(expenses) FROM `employeerecords` AS TOTAL;
+//If we want to count DISTINCT cities
+SELECT  COUNT(DISTINCT city) FROM `employeerecords`;
+SELECT  AVG(expenses) FROM `employeerecords`;
+SELECT  AVG(expenses) AS AVERAGE FROM `employeerecords`;
+SELECT  MIN(employee_age) AS employee_age,employee-name,city FROM `employeerecords`;
+//Calculate average of a month from one date to another
+SELECT  AVG(expenses) AS AVERAGE FROM `employeerecords` WHERE date_from BETWEEN '2020-08-02' AND '2020-08-19';
+//Calculate average of a month from one date to another 
+SELECT  SUM(expenses) AS SUM FROM `employeerecords` WHERE date_from BETWEEN '2020-08-01' AND '2020-08-31';
+SELECT  AVG(expenses) AS SUM FROM `employeerecords` WHERE date_from BETWEEN '2020-08-01' AND '2020-08-31';
+SELECT  SUM(expenses) AS SUM FROM `employeerecords` WHERE date_from BETWEEN '2020-09-01' AND '2020-09-30';
+14. UPDATE 
+UPDATE employeerecords SET employee_name='Tanzim Ibthesam' WHERE id=1;
+15.COMMIT NAD ROLLBACK 
+
+COMMIT;
+//starts from here
+//at first commit then rollback
+SELECT * FROM employeerecords ;
+COMMIT;
+UPDATE employeerecords SET employee_name='Tanzim Ibthesam' WHERE id=1;
+
+ROLLBACK;
+15. DELETE 
+//DELTE a column 
+DELETE * FROM employeerecords WHERE id=15;
+

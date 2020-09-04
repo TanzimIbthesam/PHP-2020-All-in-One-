@@ -67,5 +67,57 @@ SELECT * FROM `employeerecords` WHERE employee_designation IN ('Senior Officer',
 
 7.BETWEEN
 SELECT * FROM `employeerecords` WHERE employee_age BETWEEN 18 AND 20;
+NOT BETWEEN 
+SELECT * FROM employeerecords WHERE  employee_age NOT  BETWEEN 18 AND 20;  
+
+8.LIKE 
+
+-Starts with LIKE 'a%'
+-Ends with LIKE '%a'
+-am in any position LIKE '%am%'
+-a starts with a and end with m LIKE 'a%m'
+-a in second position LIKE '_a%'
+-a in third position LIKE '__a%'
+-o in second position y in third position '__oy'
+
+SELECT * FROM employeerecords WHERE  employee_name LIKE  "t%";
+//Starts with T ends with m
+SELECT * FROM employeerecords WHERE  employee_name LIKE  "t%m";
+//am in any position 
+
+SELECT * FROM employeerecords WHERE  employee_name LIKE  "%am%";
+
+//OR 
+SELECT * FROM employeerecords WHERE  employee_name LIKE  "t%" OR employee_name LIKE "m%";
+//FOR CASE SENSITIVE SEARCH 
+SELECT * FROM employeerecords WHERE  employee_name LIKE BINARY "t%" ;
+SELECT * FROM employeerecords WHERE  employee_name LIKE BINARY "T%" ;
+
+//Search for phone number 
+SELECT * FROM employeerecords WHERE  employee_phonenum LIKE  "6%" ;
+ENDS with 6
+SELECT * FROM employeerecords WHERE  employee_phonenum LIKE  "%6" ;
 
 
+NO SIMILAR To 
+SELECT * FROM employeerecords WHERE  employee_phonenum LIKE  "%6" ;
+
+9.BETWEEN and NOT BETWEEN
+BETWEEN 
+SELECT * FROM employeerecords WHERE  employee_age BETWEEN 18 AND 20  ;
+
+10.Mysql regex 
+
+SELECT * FROM employeerecords WHERE  employee_name REGEXP 'am'  ;
+//start with ta
+SELECT * FROM employeerecords WHERE  employee_name REGEXP 'ta'  ;
+//ends with am 
+SELECT * FROM employeerecords WHERE  employee_name REGEXP 'am$'  ;
+//all included JOHn SMITH 
+SELECT * FROM employeerecords WHERE  employee_name REGEXP 'Tan|Mike|George'  ;
+//variety start with one 
+SELECT * FROM employeerecords WHERE  employee_name REGEXP '^Tan|Mike|^Micky'  ;
+//both a and n 
+SELECT * FROM employeerecords WHERE  employee_name REGEXP '[an]'  ;
+
+//
