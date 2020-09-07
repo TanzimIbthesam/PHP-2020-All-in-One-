@@ -49,4 +49,10 @@ SELECT students.id,students.name,students.age,students.marks,city.name,courses.n
  INNER JOIN courses 
  ON students.courses_id=courses.id
 
+SELECT 
+city.id,city.name,students.age,COUNT(students.city_id) AS Studentpercity ,
+COUNT(students.age) AS AgeGroupPercities FROM students 
+INNER JOIN city 
+ON students.city_id=city.id GROUP BY city_id
+
 

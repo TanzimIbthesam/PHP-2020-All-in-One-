@@ -1,0 +1,30 @@
+1.UNION AND UNION ALL 
+UNION
+SELECT employee_name FROM employeerecords UNION SELECT name FROM students;
+UNION ALL
+SELECT employee_name FROM employeerecords UNION ALL SELECT name FROM students;
+2. IF & CASE Statement 
+CASE
+SELECT 
+id,marks, CASE 
+WHEN marks > 80 THEN "Excellent"
+ ELSE "Marks needs to be better"
+ END As GRADE
+ FROM usermarkrecords;
+
+SELECT 
+id,marks, CASE 
+WHEN marks>=80  AND marks<100 THEN "A+"
+WHEN marks>=70  AND marks<80 THEN "B"
+WHEN marks>=60  AND marks<70 THEN "C"
+WHEN marks>=50 AND marks<60 THEN "D"
+WHEN marks>=0 AND marks<50 THEN "F"
+ ELSE "Marks needs to be better"
+ END As GRADE
+ FROM students;
+IF -To find whether a student has passed or failed
+ SELECT 
+ id,marks, 
+ if(marks>=60,"Pass","Fail") AS Result 
+ FROM students;
+        
