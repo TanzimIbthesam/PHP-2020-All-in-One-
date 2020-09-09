@@ -27,4 +27,33 @@ IF -To find whether a student has passed or failed
  id,marks, 
  if(marks>=60,"Pass","Fail") AS Result 
  FROM students;
-        
+ 3. Arithmetic Functions
+        SELECT 5+6 AS Total
+         SELECT  id,(marks+5) AS FinalMarks   FROM usermarkrecords;
+   SELECT id,(marks+5) AS 
+   FinalMarks, CASE 
+   WHEN 
+   marks>=80 AND marks<100 
+   THEN "A+" 
+   WHEN 
+   marks>=70 AND marks<80 THEN "B" 
+   WHEN marks>=60 AND marks<70 THEN "C" 
+   WHEN marks>=50 AND marks<60 THEN "D"
+    WHEN marks>=0 AND marks<50 THEN "F"
+     ELSE "Marks needs to be better" END AS GRADE 
+     FROM usermarkrecords;
+      SELECT  id,(marks+5) AS FinalMarks   FROM usermarkrecords;
+      SELECT ROUND(2.49);
+      SELECT SQRT(2.49);
+      SELECT RAND();
+        SELECT 50+RAND()*100;
+        SELECT FLOOR(2.5);
+        SELECT CEIL(2.5);
+        SELECT FLOOR(7+(RAND()*6));
+
+        SELECT * FROM usermarkrecords 
+        2.String Functions 
+         SELECt UCASE(name) FROM students;
+         SELECT LCASE(name) FROM students;
+         SELECT * LENGTH(name) AS NAMELENGTH FROM students;
+         SELECT id,LENGTH(name),age,marks AS NEWLENGTH FROM students;
